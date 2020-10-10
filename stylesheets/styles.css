@@ -1,7 +1,10 @@
 html, body { height: 100% }
 
 body {
-  background-color: #fffaf0;
+  background-image: radial-gradient(#faf9e9 40% , #6b6a6a);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
 }
 
 .background {
@@ -11,8 +14,15 @@ body {
   left: 0;
   right: 0;
   z-index: -1;
+  height: 100%;
+  width: 100%;
+  
+  
 }
-
+.bottom {
+  padding-top: 10%;
+  padding-bottom: 15%;
+}
 .navbar.transparent.navbar-inverse .navbar-inner {
     border-width: 0px;
     -webkit-box-shadow: 0px 0px;
@@ -37,5 +47,9 @@ body {
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
+    
 }
 
+.top-pad{
+  padding-top: 5%;
+}
