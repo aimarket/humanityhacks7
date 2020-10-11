@@ -1,7 +1,7 @@
 html, body { height: 100% }
 
 body {
-  background-image: radial-gradient(#faf9e9 40% , #6b6a6a);
+  background-image: radial-gradient(#fffff8 40% , #6b6a6a);
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin: 0;
