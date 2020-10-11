@@ -43,50 +43,6 @@ function handleDrop(e) {
 
 
 
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyBnRXdHt9-SVlxMvs4SoKOyLPRMFEBkDfY",
-    authDomain: "hackforhumanity-6dec6.firebaseapp.com",
-    databaseURL: "https://hackforhumanity-6dec6.firebaseio.com",
-    projectId: "hackforhumanity-6dec6",
-    storageBucket: "hackforhumanity-6dec6.appspot.com",
-    messagingSenderId: "349254690937",
-    appId: "1:349254690937:web:d7f25c35aa778062790ca8",
-    measurementId: "G-RB866WP5HC"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-// Get a reference to the database service
-const database = firebase.database().ref();
-
-
-const handleSubmitClick = (e) => {
-    e.preventDefault();
-
-    console.log(IncidentInfo);
-    firebase.database().ref('incidents/' + '1').set({
-        data: IncidentInfo
-    });
-}
-
-let submitButton = document.getElementById('submit-button');
-submitButton.addEventListener('click', handleSubmitClick, false);
-
-function writeUserData(userId, name, email, imageUrl) {
-    firebase.database().ref('users/' + userId).set({
-        username: name,
-        email: email,
-        profile_picture: imageUrl
-    });
-}
-
-
-
-
 function uploadFile(file) {
     let url;
     let formData = new FormData()
