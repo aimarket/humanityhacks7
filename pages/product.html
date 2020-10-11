@@ -1,49 +1,182 @@
 <!DOCTYPE html>
-<html>  
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property='og:title' content='Hacks for Humanity Team 7'/>
-    <meta property='og:image' content='/humanityhacks7/assets/caringhands.png'/>
-    <meta property='og:description' content="Website dedicatd to our product created by our team">
-    <link type="application/json+oembed" href="https://raw.githubusercontent.com/aimarket/focis/master/atorres/oembed.json" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<html>
 
-    <link rel="stylesheet" href="/humanityhacks7/stylesheets/styles.css">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property='og:title' content='Hacks for Humanity Team 7' />
+  <meta property='og:image' content='/humanityhacks7/assets/caringhands.png' />
+  <meta property='og:description' content="Website dedicatd to our product created by our team">
+  <link type="application/json+oembed"
+    href="https://raw.githubusercontent.com/aimarket/focis/master/atorres/oembed.json" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  </head>
+  <link rel="stylesheet" href="/humanityhacks7/stylesheets/styles.css">
+  <link rel="stylesheet" href="/humanityhacks7/stylesheets/product_styles.css">
+</head>
 
 
-  <body>
-    
-    <nav class="navbar navbar-expand navbar-light bg-transparent flex-column flex-md-row bd-navbar">
-            <!-- Brand -->
-            
-            
-          
-            <!-- Links -->
-            <div class="navbar-nav-scroll">
-              <ul class="navbar-nav bd-navbar-nav flex-row">
-              <a class="navbar-brand" href="/humanityhacks7/index.html">R4A</a>
-              <li class="nav-item">
-                <a class="nav-link" href="/humanityhacks7/pages/product.html">Product</a>
-            </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/humanityhacks7/pages/about.html">About</a>
-              </li>
-            </ul>
-            </div>
-            <ul class="navbar-nav ml-md-auto text-gradient">
-              <a type="button" class="btn btn-outline-dark" href="/humanityhacks7/pages/contact.html">Contact</a>
-            </ul>
-          </nav>
+<body>
 
-          <h1 class="display-3">product</h1>
+  <nav class="navbar navbar-expand navbar-light bg-transparent flex-column flex-md-row bd-navbar">
+    <!-- Brand -->
 
-    <canvas class="background"></canvas>
-    <script src="/humanityhacks7/scripts/start.js"></script>
-    <script src="/humanityhacks7/scripts/particles.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  </body>
+
+    <!-- Links -->
+    <div class="navbar-nav-scroll">
+      <ul class="navbar-nav bd-navbar-nav flex-row">
+        <a class="navbar-brand" href="/humanityhacks7/index.html">TEAM 7</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Projects</a>
+          <div class="dropdown-menu bg-transparent" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/humanityhacks7/pages/product.html">Product</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/humanityhacks7/pages/about.html">About</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="navbar-nav ml-md-auto text-gradient">
+      <a type="button" class="btn btn-outline-dark" href="/humanityhacks7/pages/contact.html">Contact</a>
+    </ul>
+  </nav>
+
+  <h1 class="display-3">product</h1>
+  <div>
+    We are building an open-source archive of civilian-police interactions. It is our hope that
+    this information can serve as a resource to community organizers looking to combat police
+    brutality, to police departments seeking additional insights into the implementation of their
+    training, and to researchers seeking to understand the situational dynamics that result in
+    negative encounters with police.
+  </div>
+
+  <div>
+    The world is a better place when speak truth to power. If you would like to anonymously contribute to this
+    project, you can submit materials below.
+  </div>
+
+  <!-- Input Fields for Information Associated with Video -->
+
+  <!-- Video Submission Interface -->
+
+  <div class="card" id="product-ui-background">
+
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="date">Date of Incident</label>
+          <input type="date" class="form-control" id="date">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">City</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">State</label>
+          <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+            <option>California</option>
+            <option>Colorado</option>
+            <option>Connecticut</option>
+            <option>Delaware</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Idaho</option>
+            <option>Illinois</option>
+            <option>Indiana</option>
+            <option>Iowa</option>
+            <option>Kansas</option>
+            <option>Kentucky</option>
+            <option>Louisiana</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Massachusetts</option>
+            <option>Michigan</option>
+            <option>Minnesota</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Montana</option>
+            <option>Nebraska</option>
+            <option>Nevada</option>
+            <option>New Hampshire</option>
+            <option>New Jersey</option>
+            <option>New Mexico</option>
+            <option>New York</option>
+            <option>North Carolina</option>
+            <option>North Dakota</option>
+            <option>Ohio</option>
+            <option>Oklahoma</option>
+            <option>Oregon</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Carolina</option>
+            <option>South Dakota</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Utah</option>
+            <option>Vermont</option>
+            <option>Virginia</option>
+            <option>Washington</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Wyoming</option>
+          </select>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputZip">Zip</label>
+          <input type="text" class="form-control" id="inputZip">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Description of Event (1000 words max)</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Does your recording contain violent, graphic, or otherwise distrubing material?
+          </label>
+        </div>
+      </div>
+
+    </form>
+
+
+    <div id="drop-area">
+      <form class="my-form">
+        <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
+        <input type="file" id="fileElem" accept="audio/*,video/*,image/*" onchange="handleFiles(this.files)">
+        <label class="button" for="fileElem">Select some files</label>
+      </form>
+      <div id="gallery"></div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Record</button>
+  </div>
+
+
+
+  <canvas class="background"></canvas>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="/humanityhacks7/scripts/start.js"></script>
+  <script src="/humanityhacks7/scripts/userInterface.js"></script>
+  <script src="/humanityhacks7/scripts/particles.min.js"></script>
+</body>
+
 </html>
