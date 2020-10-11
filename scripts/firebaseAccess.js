@@ -1,8 +1,16 @@
 /**
- * Apparently, it is necessary to have a firebase and a firestore instance
- * to upload videos, so we will attempt that solution
  * 
+ * This persistence solution uses Google Cloud Storage to remotely house
+ * user submitted videos and associated data. Google Firebase is used to 
+ * store multimedia inputs (i.e., videos and images). Google Firestore is
+ * used to store the text information associated with each video. 
  * 
+ * While not the most convienent strategy, we take this approach for three
+ * reasons: (1) Google Firebase does not support queries, (2) Google Firestore
+ * has limited support for uploading large binary files, (3) time constraints.
+ * 
+ * Future Implementations of this project should seek to integrate a scaleable
+ * persistence solution as early as possible. 
  */
 
 /**
@@ -13,8 +21,7 @@
 
 
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBnRXdHt9-SVlxMvs4SoKOyLPRMFEBkDfY",
     authDomain: "hackforhumanity-6dec6.firebaseapp.com",
@@ -36,38 +43,39 @@ const FIREBASE_DATABASE = firebase.database().ref();
 const database = firebase.firestore();
 
 let submitButton = document.getElementById('submit-button');
-submitButton.addEventListener('click', handleSubmitForFireBase, false);
-submitButton.addEventListener('click', handleSubmitForFireStore, false);
+submitButton.addEventListener('click', handleSubmitClick, false);
+
 
 // Create a root reference
-var storageRef = firebase.storage().ref();
+let storageRef = firebase.storage().ref();
 
 // Create a reference to 'images/mountains.jpg'
-var videoRef = storageRef.child('images/first_video');
 
 
-function handleSubmitForFireBase (event) {
-    
+function handleSubmitClick ( event ) {
+
+    // Prevent window from refreshing 
     event.preventDefault();
 
-    // message_: "Firebase Storage: The operation 'put' cannot be performed on a 
-    // root reference, create a non-root reference using child, such as .child('file.png')."
+    // Create reference to recording. This will be used to 
+    let videoRef = storageRef.child(`recordings/${Recording.files[0].name}`);
 
+    // Store video to Firebase Storage
     videoRef.put(Recording.files[0]).then(function(snapshot) {
         console.log('Uploaded a blob or file!');
     }); 
 
+    // Associate the video with the inputted text information using the URL
+    IncidentInfo.videoRef = `recordings/${Recording.files[0].name}`;
 
-}
-
-// Callback prevents page refresh and calls persist method 
-function handleSubmitForFireStore (event) {
-    event.preventDefault();
-
+    // Add submission time and date 
     IncidentInfo.submission_time = new Date().toLocaleString();
+    
+    // save the text inputted text information to Firestore 
     savetoFirestore(IncidentInfo);
 
     console.log(IncidentInfo);
+
 }
 
 // This is the method that saves the information to firestore
