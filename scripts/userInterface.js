@@ -24,44 +24,29 @@ const unhighlight = (e) => dropArea.classList.remove('highlight');
 
 
 function handleFiles(files) {
-    files = [...files]
-    files.forEach(uploadFile)
-    files.forEach(previewFile)
+    
+    files = [...files];
+    files.forEach(previewFile);
+    
+    Recording.files = [ ...files ]; 
 }
 
 dropArea.addEventListener('drop', handleDrop, false);
 
-function handleDrop(e) {
-    let dt = e.dataTransfer
+function handleDrop(event) {
+    let dt = event.dataTransfer
     let files = dt.files
 
     alert('file submitted');
 
-    handleFiles(files)
+    handleFiles(files); 
 }
-
-
-
-
-function uploadFile(file) {
-    let url;
-    let formData = new FormData()
-
-    formData.append('file', file)
-
-    fetch(url, {
-        method: 'POST',
-        body: formData
-    })
-        .then(() => { /* Done. Inform the user */ })
-        .catch(() => { /* Error. Inform the user */ })
-}
-
 
 
 //  Image Preview Functionality 
 
 function previewFile(file) {
+
     let reader = new FileReader()
     reader.readAsDataURL(file)
     reader.onloadend = function () {

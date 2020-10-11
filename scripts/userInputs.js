@@ -3,17 +3,24 @@ const IncidentInfo = {
     time : null,
     state : null,
     city : null,
-    zipcode : null,
+    zipCode : null,
     description : null,
-    graphic_content : false
+    graphic_content : false,
+    submission_time : null,
+}; 
+
+const Recording = {
+    files : null
 }
 
 
 const onChangeIncidentInfo = (event) => {
 
-    if ( event.target.name === gridCheck ) {
-        IncidentInfo.graphic_content = ! IncidentInfo.graphic_content
+    if ( event.target.name === 'gridCheck' ) {
+
+        console.log( gridCheck.prop('checked') );
     }
+
     console.log(event.target.value); 
 
     IncidentInfo[event.target.name] = event.target.value; 
