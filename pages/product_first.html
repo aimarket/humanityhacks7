@@ -20,46 +20,48 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-transparent flex-column flex-md-row bd-navbar">
     <!-- Brand -->
-    
-    
-  
+
+
     <!-- Links -->
     <div class="navbar-nav-scroll">
       <ul class="navbar-nav bd-navbar-nav flex-row">
-      <a class="navbar-brand" href="/humanityhacks7/index.html">R4A</a>
-      <li class="nav-item">
-        <a class="nav-link"href="/humanityhacks7/pages/reports.html">Reports</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/humanityhacks7/pages/about.html">About</a>
-      </li>
-    </ul>
+        <a class="navbar-brand" href="/humanityhacks7/index.html">R4A</a>
+        <li class="nav-item">
+            <a class="nav-link"href="/humanityhacks7/pages/reports.html">Reports</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/humanityhacks7/pages/about.html">About</a>
+        </li>
+      </ul>
     </div>
     <ul class="navbar-nav ml-md-auto text-gradient">
-      <a type="button" class="btn btn-outline-dark" href="/humanityhacks7/pages/contact.html">Contact</a>
+      <a type="button" class="btn btn-outline-light" href="/humanityhacks7/pages/contact.html">Contact</a>
     </ul>
   </nav>
+
   <h1 class="display-3 text-center">Video Submission Form</h1>
   <div class="container">
-    <div class="row" style="padding-bottom: 5%;">
-        <div class="col-1">
-        </div>
-        <div class="col-10 text-center">
-          We are building an open-source archive of civilian-police interactions. It is our hope that
-  this information can serve as a resource to community organizers looking to combat police
-  brutality, to police departments seeking additional insights into the implementation of their
-  training, and to researchers seeking to understand the situational dynamics that result in
-  negative encounters with police.
-        </div>
-    </div>
-    <div class="row">
-      <div class="col-12 text-center">
-          <h6>The world is a better place when you speak truth to power. <p>If you would like to anonymously contribute to this
-              project, you can submit materials below.</p></h6>
+      <div class="row" style="padding-bottom: 5%;">
+          <div class="col-1">
+          </div>
+          <div class="col-10 text-center">
+            We are building an open-source archive of civilian-police interactions. It is our hope that
+    this information can serve as a resource to community organizers looking to combat police
+    brutality, to police departments seeking additional insights into the implementation of their
+    training, and to researchers seeking to understand the situational dynamics that result in
+    negative encounters with police.
+          </div>
       </div>
-    </div>
-  
-</div>
+      <div class="row">
+        <div class="col-12 text-center">
+            <h6>The world is a better place when you speak truth to power. <p>If you would like to anonymously contribute to this
+                project, you can submit materials below.</p></h6>
+        </div>
+      </div>
+    
+  </div>
+
+
 
   <!-- Input Fields for Information Associated with Video -->
 
@@ -69,23 +71,19 @@
 
     <form>
       <div class="form-row">
-
         <div class="form-group col-md-6">
-          <label for="inputDate">Date of Incident</label>
-          <input type="date" class="form-control" id="inputDate" name="date">
+          <label for="date">Date of Incident</label>
+          <input type="date" class="form-control" id="date">
         </div>
       </div>
-
       <div class="form-row">
-
         <div class="form-group col-md-6">
           <label for="inputCity">City</label>
-          <input type="text" class="form-control" id="inputCity" name='city'>
+          <input type="text" class="form-control" id="inputCity">
         </div>
-
         <div class="form-group col-md-4">
           <label for="inputState">State</label>
-          <select id="inputState" class="form-control" name='state'>
+          <select id="inputState" class="form-control">
             <option selected>Choose...</option>
             <option>Alabama</option>
             <option>Alaska</option>
@@ -141,7 +139,7 @@
         </div>
         <div class="form-group col-md-2">
           <label for="inputZip">Zip</label>
-          <input type="text" class="form-control" id="inputZip" name='zipCode'>
+          <input type="text" class="form-control" id="inputZip">
         </div>
       </div>
       <div class="form-group">
@@ -150,14 +148,13 @@
       </div>
 
       <div class="form-group">
-        <label for="InputDescription">Description of Event (1000 words max)</label>
-        <textarea class="form-control" id="inputDescription" name="description" rows="3"></textarea>
+        <label for="exampleFormControlTextarea1">Description of Event (1000 words max)</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
       <div class="form-group">
         <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
           <label class="form-check-label" for="gridCheck">
-            <input class="form-check-input" type="checkbox" 
-            id="gridCheck" name='gridCheck' >
             Does your recording contain violent, graphic, or otherwise distrubing material?
           </label>
         </div>
@@ -168,34 +165,25 @@
 
     <div id="drop-area">
       <form class="my-form">
-        <p>Upload multimedia Content associated with this event. Multipe submissions possible. </p>
+        <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
         <input type="file" id="fileElem" accept="audio/*,video/*,image/*" onchange="handleFiles(this.files)">
         <label class="button" for="fileElem">Select some files</label>
       </form>
       <div id="gallery"></div>
     </div>
 
-    <button type="submit" class="btn btn-primary" id='submit-button'>Submit Record</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 
 
 
   <canvas class="background"></canvas>
-  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-storage.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="/humanityhacks7/scripts/start.js"></script>
   <script src="/humanityhacks7/scripts/userInterface.js"></script>
   <script src="/humanityhacks7/scripts/particles.min.js"></script>
-  <script src="/humanityhacks7/scripts/userInputs.js"></script>
-  <script src="/humanityhacks7/scripts/firebaseAccess.js"></script>
-
 </body>
 
 </html>
