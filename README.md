@@ -8,4 +8,4 @@ Overall it was a great experience and we ended of winning **"Best Website"** whi
 
 <a href="https://aimarket.github.io/humanityhacks7/">Hacks for Humanity 2020 team 7 website </a>
 
-<img src="https://github.com/aimarket/humanityhacks7/blob/master/chrome_fBu5cF1tu9.gif?raw=true" alt="slide0" title="Slide0" height="500"/>
+<img src="https://github.com/aimarket/humanityhacks7/blob/master/chrome_fBu5cF1tu9.gif?raw=true" alt="slide0" title="Slide0" width="700"/>
